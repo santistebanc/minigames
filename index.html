@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Minigames</title>
+    <style>
+        body {
+            margin: 0;
+            background: #B4D9E7;
+        }
+    </style>
+    <script src="phaser.js"></script>
+    <script src="phaser-state-transition.min.js"></script>
+    <script src="Utilities/TransitionManager.js"></script>
+    <script src="Boot.js"></script>
+    <script src="Preloader.js"></script>
+    <script src="Utilities/Banner.js"></script>
+    <script src="Utilities/GameTimer.js"></script>
+    <script src="MiniGame.js"></script>
+    <script src="MainMenu.js"></script>
+    <script src="InterScreen.js"></script>
+    <script src="MiniGames/Balloon.js"></script>
+    <script src="MiniGames/FallingRocks.js"></script>
+    <script src="MiniGames/FlappyBird.js"></script>
+</head>
+
+<body>
+    <script>
+        (function () {
+            var game = new Phaser.Game(640, 960, Phaser.AUTO, 'game');
+            game.state.add('Boot', MiniGames.Boot);
+            game.state.add('Preloader', MiniGames.Preloader);
+            game.state.add('MainMenu', MiniGames.MainMenu);
+            game.state.add('InterScreen', MiniGames.InterScreen);
+            game.state.add('Balloon', MiniGames.Balloon);
+            game.state.add('FallingRocks', MiniGames.FallingRocks);
+            game.state.add('FlappyBird', MiniGames.FlappyBird);
+            game.state.start('Boot');
+        })();
+    </script>
+</body>
+
+</html>
